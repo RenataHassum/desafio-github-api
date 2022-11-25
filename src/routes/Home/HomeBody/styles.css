@@ -1,0 +1,18 @@
+.title-home-body {
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--font-secundary);
+  line-height: 64px;
+}
+
+.subtitle-home-body {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--font-tertiary);
+  margin-bottom: 27px;
+  line-height: 40px;
+}
+
+.container-title-home-body {
+  padding: 27px 41px;
+}

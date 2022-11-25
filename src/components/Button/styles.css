@@ -1,0 +1,11 @@
+button {
+  border-radius: 4px;
+  background-color: var(--bg-button);
+  border: none;
+  height: 40px;
+  width: 101px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--font-primary);
+  cursor: pointer;
+}

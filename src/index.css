@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --bg-page: #fff;
+  --bg-header: #1890ff;
+  --bg-button: #1890ff;
+  --bg-card-input: #e6f7ff;
+  --bg-card-info: #f5f5f5;
+  --font-primary: #fff;
+  --font-secundary: #000;
+  --font-tertiary: #7e7e7e;
+  --font-quaternary: #262626;
+  --font-input: #5c5858;
+  --font-input-placeholder: #bfbfbf;
+
+  --font-subtitle: #1890ff;
+  --font-infos: #737373;
+  --border-input: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-page);
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}

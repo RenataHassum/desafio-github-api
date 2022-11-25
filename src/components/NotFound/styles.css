@@ -1,0 +1,10 @@
+.title-not-found {
+  font-weight: 500;
+  font-size: 38px;
+  color: var(--font-secundary);
+  line-height: 64px;
+}
+
+.container-title-not-found {
+  margin: 54px 90px;
+}
