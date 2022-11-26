@@ -20,7 +20,7 @@ export default function BlueCard() {
 
   function handleClickSubmit(event: any) {
     event.preventDefault();
-    dataService.findByLogin(String(params.users)).then((response) => {
+    dataService.findByLogin(String(params.loginGit)).then((response) => {
       console.log(response.data);
       setData(response.data);
       console.log('cliclou no button ' + formData.login);
@@ -29,7 +29,7 @@ export default function BlueCard() {
 
   // useEffect(() => {
   //   dataService
-  //     .findByLogin(String(params.users))
+  //     .findByLogin(String(params.loginGit))
   //     .then((response) => {
   //       console.log(response.data);
   //       setData(response.data);
