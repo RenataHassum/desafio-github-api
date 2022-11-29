@@ -1,6 +1,6 @@
 import './styles.css';
-import Button from '../Button';
 import BlueCard from '../BlueCard';
+import { Outlet } from 'react-router-dom';
 
 export default function NotFound() {
   return (
