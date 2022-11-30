@@ -1,6 +1,7 @@
 import './styles.css';
 import { DataDTO } from '../../models/data';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../utils/system';
 
 type Props = {
   info: DataDTO;
@@ -18,7 +19,10 @@ export default function DetailsCard({ info }: Props) {
             <h2 className="title-info">Informações</h2>
             <ul className="container-list-info">
               <li className="list-info">
-                <strong>Perfil:</strong> <Link to={info.url}>{info.url}</Link>
+                <strong>Perfil:</strong>{' '}
+                <Link to={info.html_url} className="link-info">
+                  {info.url}
+                </Link>
               </li>
               <li className="list-info">
                 <strong>Seguidores:</strong> {info.followers}

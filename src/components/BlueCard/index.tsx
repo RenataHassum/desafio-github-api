@@ -1,25 +1,22 @@
 import './styles.css';
 import { useState } from 'react';
 import * as dataService from '../../services/data-service';
-import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import DetailsCard from '../DetailsCard';
 import { DataDTO } from '../../models/data';
-import NotFound from '../NotFound';
 
 export default function BlueCard() {
   const [component, setComponent] = useState<DataDTO>();
-
   const [formLoginUser, setFormLoginUser] = useState({
     loginUser: '',
   });
-
   const params = useParams();
-
   const navigate = useNavigate();
+
+  let [searchParams, setSearchParams] = useSearchParams();
 
   function handleClickSubmit(event: any) {
     event.preventDefault();
-
     dataService
       .findByLogin(formLoginUser.loginUser)
       .then((response) => {
@@ -31,12 +28,19 @@ export default function BlueCard() {
         console.log('erro ' + error);
       });
 
-    console.log('LOGIN DATAL', String(params.loginGit));
-    console.log('LOGIN COMPON', component);
-    console.log('LOGIN FORM', formLoginUser);
+    console.log('PARAMS', String(params.loginGit));
+    console.log('COMPONENT', component);
+    console.log('FORMINPUT', formLoginUser);
   }
 
   function handleInputChange(event: any) {
+    const user = event.target.value;
+    if (user) {
+      setSearchParams({ user });
+    } else {
+      setSearchParams({});
+    }
+
     setFormLoginUser({ ...formLoginUser, loginUser: event.target.value });
   }
 
@@ -49,7 +53,8 @@ export default function BlueCard() {
               <h1 className="title-card">Encontre um perfil Github</h1>
               <input
                 name="loginUser"
-                value={formLoginUser.loginUser}
+                // value={formLoginUser.loginUser}
+                value={searchParams.get('user') || ''}
                 className="input-card"
                 type="text"
                 placeholder="Usuário Github"
