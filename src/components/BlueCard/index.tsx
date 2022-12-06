@@ -1,5 +1,5 @@
 import './styles.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as dataService from '../../services/data-service';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import DetailsCard from '../DetailsCard';
@@ -28,6 +28,7 @@ export default function BlueCard() {
         console.log('erro ' + error);
       });
 
+    console.log('cliclou');
     console.log('PARAMS', String(params.loginGit));
     console.log('COMPONENT', component);
     console.log('FORMINPUT', formLoginUser);
